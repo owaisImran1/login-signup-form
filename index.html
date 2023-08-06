@@ -1,63 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login/Register</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-    
-  <div class="container">
-      <div class="loginbg">
-          <div class="box signin">
-              <h2>Already Have an Account ?</h2>
-              <button class="signinbtn">Sign in</button>
-          </div>
-          <div class="box signup">
-            <h2>Dont Have an Account ?</h2>
-            <button class="signupbtn">Sign up</button>
-          </div>
-      </div>
-      <div class="formbx">
-        <div class="form signinform">
-            <form>
-                <h2>Foodies</h2>
-                <h3>Log in</h3>
-                <input type="text" placeholder="E-mail" required>
-                <input type="password" placeholder="Password" required>
-                <input type="button" value="Login">
-                </a>
-                <a href="#" class="forgot">Forgot password?</a>
-            </form>
-        </div>
-        <div class="form signupform">
-            <form>
-                <h3>Sign up</h3>
-                <input type="text" placeholder="Enter Your Name" required>
-                <input type="text" placeholder="Email" required>
-                <input type="date" placeholder=" Enter your Date of birth" required>
-                <input type="password" placeholder="Password"required>
-                <input type="password" placeholder="Confirm password" required>
-                <input type="submit" value="Sign Up">
-            </form>
-        </div>
-      </div>
-      </div>
-<script>
-    const signinbtn = document.querySelector('.signinbtn');
-    const signupbtn = document.querySelector('.signupbtn');
-    const formbx = document.querySelector('.formbx'); 
-    const body = document.querySelector('body')
 
-    signupbtn.onclick = function(){
-        formbx.classList.add('active')
-        body.classList.add('active')
-    }
-    signinbtn.onclick = function(){
-        formbx.classList.remove('active')
-        body.classList.remove('active')
-    }
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="loginbg">
+            <div class="box signin">
+                <h2>Already Have an Account ?</h2>
+                <button class="signinbtn">Sign in</button>
+            </div>
+            <div class="box signup">
+                <h2>Dont Have an Account ?</h2>
+                <button class="signupbtn">Sign up</button>
+            </div>
+        </div>
+        <div class="formbx">
+            <div class="form signinform">
+                <form>
+                    <h2>Foodies</h2>
+                    <h3>Log in</h3>
+                    <input type="email" placeholder="E-mail" id="signinEmail" required>
+                    <input type="password" placeholder="Password" id="signinPassword" required>
+                    <input type="button" value="Login" onclick="signIn()">
+                    </a>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </form>
+            </div>
+            <div class="form signupform">
+                <form>
+                    <h3>Sign up</h3>
+                    <input type="text" placeholder="Enter Your Name" id="signupName" required>
+                    <input type="text" placeholder="Email" id="signupEmail" required>
+                    <input type="date" placeholder="Enter your Date of birth" id="signupDOB" required>
+                    <input type="password" placeholder="Password" id="signupPassword" required>
+                    <input type="password" placeholder="Confirm password" id="signupConfirmPassword" required>
+                    <input type="submit" value="Sign Up" onclick="signUp()">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signinbtn = document.querySelector('.signinbtn');
+        const signupbtn = document.querySelector('.signupbtn');
+        const formbx = document.querySelector('.formbx');
+        const body = document.querySelector('body')
+
+        signupbtn.onclick = function () {
+            formbx.classList.add('active')
+            body.classList.add('active')
+        }
+        signinbtn.onclick = function () {
+            formbx.classList.remove('active')
+            body.classList.remove('active')
+        }
+
+        function signIn() {
+            const email = document.getElementById("signinEmail").value;
+            const password = document.getElementById("signinPassword").value;
+            console.log("Login Details:");
+            console.log("Email:", email);
+            console.log("Password:", password);
+        }
+
+        function signUp() {
+            const name = document.getElementById("signupName").value;
+            const email = document.getElementById("signupEmail").value;
+            const dob = document.getElementById("signupDOB").value;
+            const password = document.getElementById("signupPassword").value;
+            const confirmPassword = document.getElementById("signupConfirmPassword").value;
+
+            console.log("Sign Up Details:");
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Date of Birth:", dob);
+            console.log("Password:", password);
+            console.log("Confirm Password:", confirmPassword);
+        }
     </script>
-      
+
 </body>
+
 </html>
